@@ -200,7 +200,7 @@ section.your-active-class {
 
 section.your-active-class .landing__container::before {
     opacity: 1;
-    animation: rotate 4s linear 0s infinite forwards;
+    animation: rotate 4s linear 0s infinite forwards reverse;
 }
 
 section.your-active-class .landing__container::after {
