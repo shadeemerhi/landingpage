@@ -18,6 +18,23 @@
  * 
 */
 
+const testElement = document.querySelector('main');
+const newDiv = document.createElement('div');
+newDiv.classList.add('landing__container');
+const newHeader = document.createElement('h2');
+const newPara = document.createElement('p');
+newPara.textContent = 'This is the new paragraph we created using JavaScript';
+newHeader.textContent = 'Section 4 - Our Added Section';
+
+
+newHeader.appendChild(newPara);
+newDiv.appendChild(newHeader);
+testElement.appendChild(newDiv);
+
+
+
+
+
 
 /**
  * End Global Variables
