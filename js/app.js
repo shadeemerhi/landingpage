@@ -18,22 +18,22 @@
  * 
 */
 
-const testElement = document.querySelector('main');
+/**
+ * Creating the new section and all of its child elements.
+ */
+const elMain = document.querySelector('main');
+const newSec = document.createElement('section');
 const newDiv = document.createElement('div');
 newDiv.classList.add('landing__container');
 const newHeader = document.createElement('h2');
 const newPara = document.createElement('p');
-newPara.textContent = 'This is the new paragraph we created using JavaScript';
+newPara.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.';
 newHeader.textContent = 'Section 4 - Our Added Section';
 
-
-newHeader.appendChild(newPara);
 newDiv.appendChild(newHeader);
-testElement.appendChild(newDiv);
-
-
-
-
+newDiv.appendChild(newPara);
+newSec.appendChild(newDiv);
+elMain.appendChild(newSec);
 
 
 /**
