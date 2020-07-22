@@ -64,7 +64,7 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
-.nav__container {
+.page__header {
     height: 80px;
     display: flex;
     justify-content: center;
