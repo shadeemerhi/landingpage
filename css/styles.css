@@ -84,6 +84,13 @@ section {
     border-bottom: 2px solid rgba(136,203,171,1);
 }
 
+@media(max-width: 650px) {
+    .navbar__menu li {
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+}
+
 .navbar__menu .menu__link {
     display: block;
     padding: 1em;
