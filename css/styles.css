@@ -69,8 +69,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
+  }
+  
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
@@ -79,7 +79,9 @@ section {
 
 .navbar__menu li { 
     display: inline-block;
-    padding: 75px;
+    margin-right: 50px;
+    margin-left: 50px;
+    border-bottom: 2px solid rgba(136,203,171,1);
 }
 
 .navbar__menu .menu__link {
