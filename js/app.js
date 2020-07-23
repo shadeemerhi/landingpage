@@ -23,6 +23,7 @@
  */
 const elMain = document.querySelector('main');
 const newSec = document.createElement('section');
+newSec.setAttribute("data-nav", "Section 4");
 const newDiv = document.createElement('div');
 newDiv.classList.add('landing__container');
 const newHeader = document.createElement('h2');
@@ -35,6 +36,11 @@ newDiv.appendChild(newPara);
 newSec.appendChild(newDiv);
 elMain.appendChild(newSec);
 
+const sections = document.querySelectorAll('section');
+
+
+
+
 
 /**
  * End Global Variables
@@ -42,6 +48,28 @@ elMain.appendChild(newSec);
  * 
 */
 
+function createNavLink (section) {
+    const li = document.createElement('li');
+    const aElem = document.createElement('a');
+    const aLink = `#${section.id}`;
+    const name = section.getAttribute("data-nav");
+    
+    aElem.setAttribute("href", aLink);
+    aElem.setAttribute("class", `menu__link ${section.id}`);
+    aElem.textContent = name;
+    
+    li.appendChild(aElem);
+    return li;
+}
+
+function buildNav () {
+    const navList = document.getElementById('navbar__list');
+    
+    for (const section of sections) {
+      const navLink = createNavLink(section);
+      navList.appendChild(navLink);
+    }
+}
 
 
 /**
@@ -51,6 +79,10 @@ elMain.appendChild(newSec);
 */
 
 // build the nav
+document.addEventListener('DOMContentLoaded', function () {
+    buildNav();
+    }
+)
 
 
 // Add class 'active' to section when near top of viewport
