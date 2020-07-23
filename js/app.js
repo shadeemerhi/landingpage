@@ -24,6 +24,7 @@
 const elMain = document.querySelector('main');
 const newSec = document.createElement('section');
 newSec.setAttribute("data-nav", "Section 4");
+newSec.setAttribute("id", "section4");
 const newDiv = document.createElement('div');
 newDiv.classList.add('landing__container');
 const newHeader = document.createElement('h2');
