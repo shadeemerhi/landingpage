@@ -13,6 +13,8 @@
  * 
 */
 
+const { linkSync } = require("fs");
+
 /**
  * Define Global Variables
  * 
@@ -83,6 +85,9 @@ function findActiveSection () {
       for (const link of links) {
         if (Boolean(link.classList.contains(section.id))) {
           link.classList.add('active');
+        }
+        else {
+          link.classList.remove('active');
         }
       }
     }
