@@ -72,6 +72,28 @@ function buildNav () {
     }
 }
 
+const links = document.querySelectorAll('menu__link');
+
+function findActiveSection () {
+  
+  for (const section of sections) {
+    const item = section.getBoundingClientRect();
+    if (item.top <= 150 && item.bottom >= 150) {
+      section.classList.add('your-active-class');
+      for (const link in links) {
+        if (link.classList.contains(section.id)) {
+          link.classList.add('active');
+        }
+      }
+    }
+    else {
+      section.classList.remove('your-active-class');
+      // going to remove 'active' from link classList
+      for (const link in links) {
+      }
+    }
+  }
+}
 
 /**
  * End Helper Functions
@@ -84,6 +106,12 @@ document.addEventListener('DOMContentLoaded', function () {
     buildNav();
     }
 )
+
+document.addEventListener('scroll', function () {
+    findActiveSection();
+  }
+)
+
 
 
 // Add class 'active' to section when near top of viewport
