@@ -75,13 +75,13 @@ function buildNav () {
 const links = document.querySelectorAll('menu__link');
 
 function findActiveSection () {
-  
+  const links = document.getElementsByClassName('menu__link');
   for (const section of sections) {
     const item = section.getBoundingClientRect();
     if (item.top <= 150 && item.bottom >= 150) {
       section.classList.add('your-active-class');
-      for (const link in links) {
-        if (link.classList.contains(section.id)) {
+      for (const link of links) {
+        if (Boolean(link.classList.contains(section.id))) {
           link.classList.add('active');
         }
       }
@@ -89,7 +89,7 @@ function findActiveSection () {
     else {
       section.classList.remove('your-active-class');
       // going to remove 'active' from link classList
-      for (const link in links) {
+      for (const link of links) {
       }
     }
   }
