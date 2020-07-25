@@ -13,8 +13,6 @@
  * 
 */
 
-const { linkSync } = require("fs");
-
 /**
  * Define Global Variables
  * 
@@ -94,8 +92,8 @@ function findActiveSection () {
     else {
       section.classList.remove('your-active-class');
       // going to remove 'active' from link classList
-      for (const link of links) {
-      }
+      // for (const link of links) {
+      // }
     }
   }
 }
