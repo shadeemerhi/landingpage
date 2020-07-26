@@ -91,9 +91,6 @@ function findActiveSection () {
     }
     else {
       section.classList.remove('your-active-class');
-      // going to remove 'active' from link classList
-      // for (const link of links) {
-      // }
     }
   }
 }
@@ -110,14 +107,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 )
 
-document.addEventListener('scroll', function () {
-    findActiveSection();
-  }
-)
-
-
 
 // Add class 'active' to section when near top of viewport
+document.addEventListener('scroll', function () {
+  findActiveSection();
+}
+)
 
 
 // Scroll to anchor ID using scrollTO event
