@@ -99,27 +99,12 @@ function scrollingFun (scrollLink) {
 // and when one of them is clicked, the element is sent to the function scrollingFun
 // to determine which section matches the clicked link.
 setTimeout(function addClickEvent() {
-  const link1 = document.querySelector('.section1');
-  link1.addEventListener('click', function (){
-  event.preventDefault();
-  scrollingFun(link1);
-  })
-  
-  const link2 = document.querySelector('.section2');
-  link2.addEventListener('click', function (){
-  event.preventDefault();
-  scrollingFun(link2);
-  })
-  
-  const link3 = document.querySelector('.section3');
-  link3.addEventListener('click', function (){
-  event.preventDefault();
-  scrollingFun(link3);
-  })
-  
-  const link4 = document.querySelector('.section4');
-  link4.addEventListener('click', function (){
-  event.preventDefault();
-  scrollingFun(link4);
-  })
+
+  const links = document.getElementsByClassName('menu__link');
+  for(const link of links) {
+    link.addEventListener('click', function () {
+      event.preventDefault();
+      scrollingFun(link);
+    })
+  }
 }, 1000);
