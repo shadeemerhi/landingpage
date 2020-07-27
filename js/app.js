@@ -19,7 +19,8 @@ testElement.appendChild(newSec);
 
 const sections = document.querySelectorAll('section');
 
-
+// This function creates each li element in the navbar and adds an
+// anchor link.
 function createNavLink (section) {
   const li = document.createElement('li');
   const aElem = document.createElement('a');
@@ -34,8 +35,8 @@ function createNavLink (section) {
   return li;
 }
 
-
-
+// This function dynamically builds the navigation bar depending on the
+// sections that are in the page.
 function buildNav () {
   const navList = document.getElementById('navbar__list');
   
@@ -46,7 +47,10 @@ function buildNav () {
 }
 
 
-
+// This function contains a nested for loop which is responsible for looping through
+// each section to determine which one is active and should be highlighted. The inner
+// loop is responsible for finding the corresponding link in the nav bar so that it
+// can be highlighted as well.
 function findActiveSection () {
   const links = document.getElementsByClassName('menu__link');
   for (const section of sections) {
@@ -80,7 +84,8 @@ document.addEventListener('scroll', function () {
 )
 
 
-// Created this test function to try and scroll to section 2 when clicking on section 1 in the nav bar - DOES NOT WORK AS IS RIGHT NOW.
+// This function determines which section corresponds to the link that was clicked
+// and smoothly scrolls to it.
 function scrollingFun (scrollLink) {
   for (const section of sections){
     if (scrollLink.classList[1] === section.id) {
@@ -89,8 +94,10 @@ function scrollingFun (scrollLink) {
   }
 }
 
-
-// Trying to add the 'click' event listener to button 1 - testing to try scrolling to section 2 - DOES NOT WORK AS IS RIGHT NOW.
+// This setTimeout function is utilized to allow the DOM to construct, so that each
+// link is not null. It then adds event listeners to each of the navigation links,
+// and when one of them is clicked, the element is sent to the function scrollingFun
+// to determine which section matches the clicked link.
 setTimeout(function addClickEvent() {
   const link1 = document.querySelector('.section1');
   link1.addEventListener('click', function (){
